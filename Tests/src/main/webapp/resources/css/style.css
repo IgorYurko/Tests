@@ -1,0 +1,355 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+}
+
+html {
+	
+}
+
+body {
+	background: url("../images/bg-img.png") top left repeat-x, #565759;
+	background-size: 35%;
+}
+
+main {
+	max-width: 1200px;
+	min-width: 980px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 20px;
+}
+
+header {
+	margin: 0 auto 30px;
+	padding: 30px;
+	display: inline-block;
+	border-bottom: 1px solid orange;
+	border-top: 1px solid orange;
+}
+
+header div {
+	float: left;
+}
+header div.clear{
+	clear: both;
+}
+#smile {
+	width: 240px;
+	height: 145px;
+	background: url("../images/smile.png") no-repeat scroll left top/100% auto
+		rgba(0, 0, 0, 0);
+	margin: 30px 0 0 0;
+	transition: transform 0.5s ease-out;
+}
+
+#smile:hover {
+	transform: rotate(-90deg);
+}
+
+#tests {
+	width: 580px;
+	height: 200px;
+	background: url("../images/tests.png") no-repeat scroll left top/96% auto
+		rgba(0, 0, 0, 0);
+}
+
+.content {
+	display: inline-block;
+	min-width: 980px;
+	max-width: 1100px;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+.content .err{
+	display: none;
+	margin: 0 auto;
+	max-width: 400px;
+	padding: 10px !important;
+	cursor: move;
+}
+.content .err span{
+	color: white;
+}
+.grid {
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	z-index: 1;
+	margin-left: 30px;
+	margin-top: 30px;
+	display: inline-block;
+	overflow: hidden;
+	width: 300px;
+	height: 270px;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	border-radius: 20px;
+	border: solid 8px #fff;
+}
+
+.grid figure:nth-of-type(3n+1) {
+	margin-left: 0;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before, .grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption, .grid figure a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure a {
+	z-index: 3;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2, .grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+}
+/***** Layla *****/
+/*---------------*/
+/*figure.effect-layla {
+	background: #18a367;
+}*/
+
+figure.effect-layla img {
+	min-width: 100%;
+	height: -webkit-calc(100% + 40px);
+	height: calc(100% + 40px);
+}
+
+figure.effect-layla figcaption::before, figure.effect-layla figcaption::after
+	{
+	position: absolute;
+	content: '';
+	opacity: 0;
+}
+
+figure.effect-layla figcaption::before {
+	top: 20px;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: scale(0, 1);
+	transform: scale(0, 1);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+figure.effect-layla figcaption::after {
+	top: 20px;
+	right: 20px;
+	bottom: 20px;
+	left: 20px;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	-webkit-transform: scale(1, 0);
+	transform: scale(1, 0);
+	-webkit-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+}
+
+figure.effect-layla h2 {
+	padding: 0 20px;
+	margin-top: 60px;
+	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.68), 
+				1px 1px 0px rgba(0, 0, 0, 1), 
+				-1px -1px 0px rgba(0, 0, 0, 1), 
+				1px -1px 0px rgba(0, 0, 0, 1), 
+				-1px 1px 0px rgba(0, 0, 0, 1);
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+}
+
+figure.effect-layla p {
+	padding: 20px 20px;
+	text-transform: none;
+	opacity: 0;
+	color: orange;
+	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.68), 
+				1px 1px 0px rgba(0, 0, 0, 1), 
+				-1px -1px 0px rgba(0, 0, 0, 1), 
+				1px -1px 0px rgba(0, 0, 0, 1),
+				 -1px 1px 0px rgba(0, 0, 0, 1);
+	-webkit-transform: translate3d(0, -10px, 0);
+	transform: translate3d(0, -10px, 0);
+}
+
+figure.effect-layla img, figure.effect-layla h2 {
+	-webkit-transform: translate3d(0, -30px, 0);
+	transform: translate3d(0, -30px, 0);
+}
+
+figure.effect-layla img, figure.effect-layla figcaption::before, figure.effect-layla figcaption::after,
+	figure.effect-layla p {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-layla:hover {
+	border-color: #FF6500;
+}
+
+figure.effect-layla:hover img {
+	opacity: 0.7;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+figure.effect-layla:hover figcaption::before, figure.effect-layla:hover figcaption::after
+	{
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+figure.effect-layla:hover h2, figure.effect-layla:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+figure.effect-layla:hover figcaption::after, figure.effect-layla:hover h2,
+	figure.effect-layla:hover p, figure.effect-layla:hover img {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+footer {
+	display: inline-block;
+	min-width: 820px;
+	padding: 30px;
+	border-bottom: 1px solid orange;
+	border-top: 1px solid orange;
+	margin-top: 30px;
+}
+
+footer p {
+	color: rgba(255, 255, 255, 1.00);
+}
+
+.showLogo {
+	cursor: pointer;
+	transform: scale(1.5);
+	margin-top: 250px;
+	transition: all 0.8s ease-in;
+}
+
+#smile.scaleSmile {
+	transform: rotate(-90deg);
+	transition: transform 0.8s ease-in;
+}
+
+#smile.scaleSmile:hover {
+	transform: rotate(0deg);
+	transition: transform 0.5s ease-out;
+}
+
+.hideLogo {
+	cursor: default;
+	transform: scale(1);
+	margin-top: 0;
+	transition: all 0.8s ease-out;
+}
+
+#smile.defaultSmile {
+	transform: rotate(0deg);
+	transition: transform 0.8s ease-out;
+}
+
+#smile.defaultSmile:hover {
+	transform: rotate(-90deg);
+	transition: transform 0.5s ease-out;
+}
+
+.overflowBody {
+	overflow: hidden;
+}
+
+form#testForm {
+	margin-top: 30px;
+}
+
+#testForm h2 {
+	font-size: 30px;
+	color: white;
+	margin-bottom: 20px;
+}
+
+#submit {
+	margin-top: 20px;
+}
+
+h1#result{
+	margin-top: 30px;
+	color: white;
+}
+
+h1#result span{
+	color: orange;
+}
+
+div#progressbar{
+	margin: 20px auto 0;
+	max-width: 700px;
+}
+
+div#progressbar + a img{
+	margin-top: 20px;
+}
+
