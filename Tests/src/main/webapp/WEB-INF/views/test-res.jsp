@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="include/doctype.jsp" %>
-<script type="text/javascript" src= '<c:url value = "/resources/scripts/script.progressbar.js"/>'/></script>
+<script type="text/javascript" src= '<c:url value = "/resources/scripts/script.progressbarTooltip.js"/>'/></script>
 <%@ include file="include/header.jsp" %>
 
 	<h1 id="result">

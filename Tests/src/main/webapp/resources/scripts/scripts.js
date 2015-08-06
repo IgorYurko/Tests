@@ -4,12 +4,14 @@ $(document).ready(function() {
 	var a = $("a");
 	var submit = $("#submit");
 	var smile = $("#smile");
-
+	
+	
 	/* Позиционирование смайлика */
-	smile.draggable().attr("style", $.cookie("JQSMILE")).css({
+	smile.attr("style", $.cookie("JQSMILE")).css({
 		zIndex : "10",
 		cursor : "move"
-	});
+	}).draggable();
+	
 	smile.on("mouseup", function() {
 		var res = $(this).attr("style");
 		$.cookie("JQSMILE", res);

@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
 
 <%@ include file="include/doctype.jsp" %>
-<script type="text/javascript" src= '<c:url value = "/resources/scripts/script.buttons.js"/>'/></script>
+<script type="text/javascript" src= '<c:url value = "/resources/scripts/script.buttonsCountdownAjax.js"/>'/></script>
 <%@include file="include/header.jsp"%>
 
-
+	<div id="timer"></div>
 	<f:form method="POST" commandName="testForm" class="test_form">
 	
 		<h2>${ questions.quest }</h2>

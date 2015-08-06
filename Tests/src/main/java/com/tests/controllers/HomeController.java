@@ -211,14 +211,15 @@ public class HomeController {
 				session.removeAttribute(allHttpSession.nextElement());
 			}
 			
-			Arrays.asList(request.getCookies()).parallelStream()
-									.filter(e -> !e.getName().equals("STATUS") && !e.getName().equals("JSESSIONID")
-														&& !e.getName().equals("JQSMILE"))
-									.forEach(e ->
-												{
-													e.setMaxAge(0);
-													response.addCookie(e);
-												});
+			Arrays.asList(request.getCookies())
+												.parallelStream()
+												.filter(e -> !e.getName().equals("STATUS") && !e.getName().equals("JSESSIONID")
+																	&& !e.getName().equals("JQSMILE"))
+												.forEach(e ->
+															{
+																e.setMaxAge(0);
+																response.addCookie(e);
+															});
 			
 			session.setAttribute("result", res);
 			response.addCookie(new Cookie("STATUS", "end"));

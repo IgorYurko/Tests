@@ -5,23 +5,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestForm {
 
-	private Integer answerForm;
+	private String answerForm;
 
 	public TestForm() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TestForm(Integer answerForm) {
+	public TestForm(String answerForm) {
 		super();
 		this.answerForm = answerForm;
 	}
 
-	public Integer getAnswerForm() {
+	public String getAnswerForm() {
 		return answerForm;
 	}
 
-	public void setAnswerForm(Integer answerForm) {
+	public void setAnswerForm(String answerForm) {
 		this.answerForm = answerForm;
 	}
 
