@@ -5,7 +5,6 @@ $(document).ready(function() {
 	var submit = $("#submit");
 	var smile = $("#smile");
 	
-	
 	/* Позиционирование смайлика */
 	smile.attr("style", $.cookie("JQSMILE")).css({
 		zIndex : "10",
@@ -43,7 +42,8 @@ $(document).ready(function() {
 
 		if (!getCheck.res)
 			alert("Вы не выбрали ответ!");
-		else
+		else{
+			$("div.timerJquery").countdown('pause');
 			myAjaxPost({
 				url : "test",
 				contentType : "application/x-www-form-urlencoded",
@@ -51,6 +51,11 @@ $(document).ready(function() {
 				dataVal : getCheck.check.val(),
 				html : $("body")
 			});
+		}
+	});
+	
+	$(window).unload(function(){
+		return false;
 	});
 
 });

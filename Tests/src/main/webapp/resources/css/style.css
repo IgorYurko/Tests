@@ -353,3 +353,129 @@ div#progressbar + a img{
 	margin-top: 20px;
 }
 
+div.timerCss {
+	width: 1em;
+	height: 1em;
+	margin: 0 auto;
+	font: 6.3em/1 Times!important;
+	position: absolute;
+	margin-left: 500px;
+	top: 100px;
+	left: 50%;
+	color: white;
+	font-size: 50px;
+	padding: 0px 5px;
+	border-radius: 5px;
+	z-index: 3;
+	border: 1px solid #FFF;
+	background-color: #4FB62E;
+}
+
+div.timerCss:before, div.timerCss:after {
+	content: "9876543210";
+	display: inline-block;
+	width: .5em;
+	overflow: hidden;
+	animation: timing 10s infinite step-end;
+}
+
+div.timerCss:before {
+	content: "210";
+	animation-duration: 100s;
+}
+
+@keyframes timing {
+  10%{
+   text-indent: -.5em;
+   }
+  20%{
+   text-indent: -1em;
+   }
+  30%{
+   text-indent: -1.5em;
+   }
+  40%{
+   text-indent: -2em;
+   }
+  50%{
+   text-indent: -2.5em;
+   }
+  60%{
+   text-indent: -3em;
+   }
+  70%{
+   text-indent: -3.5em;
+   }
+  80%{
+   text-indent: -4em;
+   }
+  90%{
+   text-indent: -4.5em;
+   }
+}
+
+/* jQuery Countdown styles 2.0.0. */
+.is-countdown {
+	border: 1px solid #FFF;
+	background-color: #4FB62E;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	margin-left: 500px;
+	top: 100px;
+	left: 50%;
+	color: white;
+	font-size: 50px;
+	padding: 0px 5px;
+	border-radius: 5px;
+	z-index: 3;
+}
+.countdown-rtl {
+	direction: rtl;
+}
+.countdown-holding span {
+	color: #888;
+}
+.countdown-row {
+	clear: both;
+	width: 100%;
+	text-align: center;
+	line-height: 100px;
+}
+.countdown-show1 .countdown-section {
+	width: 98%;
+}
+.countdown-show2 .countdown-section {
+	width: 48%;
+}
+.countdown-show3 .countdown-section {
+	width: 32.5%;
+}
+.countdown-show4 .countdown-section {
+	width: 24.5%;
+}
+.countdown-show5 .countdown-section {
+	width: 19.5%;
+}
+.countdown-show6 .countdown-section {
+	width: 16.25%;
+}
+.countdown-show7 .countdown-section {
+	width: 14%;
+}
+.countdown-section {
+	display: block;
+	float: left;
+	font-size: 75%;
+	text-align: center;
+}
+.countdown-amount {
+    font-size: 200%;
+}
+.countdown-period {
+    display: block;
+}
+.countdown-descr {
+	display: block;
+	width: 100%;
+}

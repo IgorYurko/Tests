@@ -160,6 +160,8 @@
 .ui-icon {
 	width: 16px;
 	height: 16px;
+	float: left;
+	margin-right: .3em;
 }
 .ui-icon,
 .ui-widget-content .ui-icon {

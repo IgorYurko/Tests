@@ -5,10 +5,9 @@
 <script type="text/javascript" src= '<c:url value = "/resources/scripts/script.checkCookieTooltip.js"/>'/></script>
 <%@ include file="include/header.jsp"%>
 
-
-	<div class="err ui-state-error ui-corner-all" style="padding: 0 .7em;">
+	<div class="err ui-state-error ui-corner-all">
 		<p>
-			<span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+			<span class="ui-icon ui-icon-alert" style=""></span>
 			<strong>Alert:</strong> 
 			<span>${ err }</span>
 		</p>

@@ -4,35 +4,26 @@ $(document).ready(function() {
 	$("#radio").buttonset();
 	$("label").addClass("ui-corner-all");
 		
-	$("#timer").countdown({until: '+0h +0m +30s', format: 'S', significant: 1, compact: true});
+	$("div.timerCss").attr({class: "timerJquery"}).countdown({until: '+30s', format: 'S', significant: 1, compact: true}).clearQueue();
 
-	
 	setTimeout(function(){
 		
 		setInterval(function(){
-			
-			if($("#timer").find("span.countdown-row").text() == "00")
+			var timer = $("div.timerJquery");
+			if(timer.find("span.countdown-row").text() === "00"){
+				timer.countdown("pause");
+				timer.find("span.countdown-row").text("");
 				myAjaxPost({
 					url : "test",
 					contentType : "application/x-www-form-urlencoded",
 					dataName : "answerForm",
 					dataVal : "NaN",
 					html : $("body")
-				}); 
-			
+				});
+				
+			}
 		}, 500);
-			
+		
 	}, 29000);
 		
-//	countdown.on("change", function(){
-//		if($(this) == "0"){
-//			
-//		}
-//	});
-	
-//	setTimeout(function(){
-//		
-//		
-//	}, 30100);
-	
 });
