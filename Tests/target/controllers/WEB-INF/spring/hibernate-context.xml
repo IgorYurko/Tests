@@ -19,10 +19,10 @@
 	 <bean id="dataSource" 
 	 	class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close"
 	 	
-	 	p:driverClassName="${driverClassName}"
-	 	p:url="${url}"
-	 	p:username="${username}"
-		p:password="${password}"	 
+	 	p:driverClassName="${jdbc.driverClassName}"
+	 	p:url="${jdbc.url}"
+	 	p:username="${jdbc.username}"
+		p:password="${jdbc.password}"	 
 	 
 	 />
     
@@ -31,8 +31,8 @@
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
         
      	p:dataSource-ref="dataSource"
-     	p:configLocation="${configLocation}"
-     	p:packagesToScan="${packagesToScan}"   
+     	p:configLocation="${hibernate.configLocation}"
+     	p:packagesToScan="${hibernate.packagesToScan}"   
         
      />
      
