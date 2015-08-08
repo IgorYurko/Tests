@@ -21,3 +21,5 @@
 		<script type="text/javascript" src= '<c:url value = "/resources/scripts/plugins.js"/>'/></script>	
 		<script type="text/javascript" src= '<c:url value = "/resources/scripts/functions.js"/>'/></script>
 		<script type="text/javascript" src= '<c:url value = "/resources/scripts/scripts.js"/>'/></script>
+
+		<title>Tests</title>

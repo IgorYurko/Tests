@@ -14,8 +14,9 @@
 
 			<f:radiobutton path="answerForm" id="answerForm_${ res.id }" value="${ res.id }" class="check" />
 			<f:label path="answerForm" for="answerForm_${ res.id }" >${ res.answer }</f:label>
-	
+
 		</c:forEach>
+			<f:radiobutton path="answerForm" value="NaN" checked="checked" hidden="hidden" />
 		</div>
 		<f:button type="submit" id="submit">Ответить</f:button>
 
