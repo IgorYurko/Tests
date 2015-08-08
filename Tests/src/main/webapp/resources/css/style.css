@@ -479,3 +479,55 @@ div.timerCss:before {
 	display: block;
 	width: 100%;
 }
+input{
+	display: none;
+}
+input:checked + label{
+	border: 1px solid #e0cfc2;
+	background: white;
+	font-weight: normal;
+	color: #000000;
+}
+label{
+	display: block;
+	max-width: 450px;
+	margin: 2px auto;
+	border: 1px solid #fff;
+	background: #ff9514 url("../images/images_jquery/ui-bg_glass_100_ff9514_1x400.png") 50% 50% repeat-x;
+	font-weight: normal;
+	color: #ffffff;
+	padding: .4em 1em;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 1.1em;
+	border-radius: 6px;
+}
+label:hover{
+	border: 1px solid #000;
+	background: url("../images/images_jquery/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x, silver;
+	font-weight: normal;
+	color: #000000;
+}
+
+label:focus{
+
+}
+button{
+	background: url("../images/images_jquery/ui-bg_glass_100_34ab0e_1x400.png") repeat-x scroll 50% 50%, green;
+	display: block;
+	max-width: 450px;
+	margin: 2px auto;
+	padding: .4em 1em;
+	color: white;
+	border-radius: 6px;
+	border: 1px solid #fff;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 1.1em;
+}
+button:hover{
+	background: url("../images/images_jquery/ui-bg_glass_100_f75764_1x400.png") 50% 50% repeat-x, red;
+	color: #000;
+	border: 1px solid #000;
+}
+button:active{
+	background: url("../images/images_jquery/ui-bg_glass_65_e9e9e9_1x400.png") 50% 50% repeat-x, silver;
+}

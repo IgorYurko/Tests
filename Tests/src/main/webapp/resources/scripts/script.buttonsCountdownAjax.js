@@ -7,11 +7,11 @@ $(document).ready(function() {
 	$("div.timerCss").attr({class: "timerJquery"}).countdown({until: '+30s', format: 'S', significant: 1, compact: true}).clearQueue();
 
 	setTimeout(function(){
-		
+
 		setInterval(function(){
-			
+
 			var timer = $("div.timerJquery");
-			
+
 			if(timer.find("span.countdown-row").text() === "00"){
 				timer.countdown("pause");
 				timer.find("span.countdown-row").text("");
@@ -23,9 +23,9 @@ $(document).ready(function() {
 					html : $("body")
 				});
 			}
-			
+
 		}, 500);
-		
+
 	}, 29000);
 		
 });

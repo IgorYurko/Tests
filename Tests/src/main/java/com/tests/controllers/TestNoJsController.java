@@ -55,7 +55,7 @@ public class TestNoJsController extends AbstractProjectController{
 			model.addAttribute("testForm", testForm);
 //If JavaScript is disabled		
 			response.addHeader("REFRESH",
-					((long)session.getAttribute("timerBegin") - System.currentTimeMillis())/1000L+ "; url=" + request.getContextPath()
+					((long)session.getAttribute("timerBegin") - System.currentTimeMillis())/1000L + "; url=" + request.getContextPath()
 							+ "/test-no-js?nothingSelected");
 
 			return "test";

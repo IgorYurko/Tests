@@ -411,7 +411,7 @@
 	border-radius: 8px;
 }
 
-#submit{
+#submit.ui-button{
 	background: url("../images/images_jquery/ui-bg_glass_100_34ab0e_1x400.png") repeat-x scroll 50% 50%, green;
 }
 #submit.ui-state-hover{

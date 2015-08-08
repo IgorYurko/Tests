@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - my_tests@localhost" uuid="3fa2cec6-954e-4871-9781-304e33f4b003">
+    <database-info product="MySQL" version="5.6.24-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="my_tests"/>
+    <table name="answers" schema="" catalog="my_tests" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="answer" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="questions_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_answers_questions" columns="questions_id" ref-table="questions" ref-schema="" ref-catalog="my_tests" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_goodanswer_answers" table="goodanswer" schema="" catalog="my_tests" columns="answers_id"/>
+      <index name="FK_answers_questions" unique="false" columns="questions_id"/>
+    </table>
+    <table name="category" schema="" catalog="my_tests" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="image" sqlType="CHAR" precision="50" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_questions_category" table="questions" schema="" catalog="my_tests" columns="category_id"/>
+    </table>
+    <table name="goodanswer" schema="" catalog="my_tests" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="questions_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="answers_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_goodanswer_answers" columns="answers_id" ref-table="answers" ref-schema="" ref-catalog="my_tests" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_goodanswer_questions" columns="questions_id" ref-table="questions" ref-schema="" ref-catalog="my_tests" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_goodanswer_answers" unique="false" columns="answers_id"/>
+      <index name="FK_goodanswer_questions" unique="false" columns="questions_id"/>
+    </table>
+    <table name="questions" schema="" catalog="my_tests" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="quest" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="category_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_questions_category" columns="category_id" ref-table="category" ref-schema="" ref-catalog="my_tests" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_answers_questions" table="answers" schema="" catalog="my_tests" columns="questions_id"/>
+      <exported-key name="FK_goodanswer_questions" table="goodanswer" schema="" catalog="my_tests" columns="questions_id"/>
+      <index name="FK_questions_category" unique="false" columns="category_id"/>
+    </table>
+  </data-source>
+</component>

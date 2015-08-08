@@ -11,9 +11,9 @@
 		<h2>${ questions.quest }</h2>
 		<div id="radio">
 		<c:forEach items="${ questions.answers }" var="res">
-			
-			<f:label path="answerForm" for="answerForm_${ res.id }" >${ res.answer }</f:label>
+
 			<f:radiobutton path="answerForm" id="answerForm_${ res.id }" value="${ res.id }" class="check" />
+			<f:label path="answerForm" for="answerForm_${ res.id }" >${ res.answer }</f:label>
 	
 		</c:forEach>
 		</div>
