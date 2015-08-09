@@ -31,32 +31,36 @@ public class TestNoJsController extends AbstractProjectController{
 		if (status.equals("first")) {
 //Add new cookie
 			HttpSession session = request.getSession();
-			session.setAttribute("timerBegin", (long)(System.currentTimeMillis() + 1000*30));
+			session.setAttribute("timerBegin", (long) (System.currentTimeMillis() + 1000 * 30));
 			response.addCookie(new Cookie("STATUS", "go"));
 			response.addCookie(new Cookie("ANSWERS", ""));
 			response.addCookie(new Cookie("QUEST_NUMBER", "1"));
-				
+//If JavaScript is disabled
+			Integer timer = Math.round(((long)session.getAttribute("timerBegin") - System.currentTimeMillis())/1000);
+			response.addHeader("REFRESH",
+					timer + "; url=" + request.getContextPath()
+							+ "/test-no-js?nothingSelected");
+
 			model.addAttribute("questions",
 					session.getAttribute("actualQuestion"));
 			model.addAttribute("testForm", testForm);
-//If JavaScript is disabled			
-			response.addHeader("REFRESH",
-					((long)session.getAttribute("timerBegin") - System.currentTimeMillis())/1000L + "; url=" + request.getContextPath()
-							+ "/test-no-js?nothingSelected");
+			model.addAttribute("timer", timer);
 
 			return "test";
 
 		} else if (status.equals("go")) {
 
 			HttpSession session = request.getSession();
-		
+//If JavaScript is disabled
+			Integer timer = Math.round(((long)session.getAttribute("timerBegin") - System.currentTimeMillis())/1000);
+			response.addHeader("REFRESH",
+					timer + "; url=" + request.getContextPath()
+							+ "/test-no-js?nothingSelected");
+
 			model.addAttribute("questions",
 					session.getAttribute("actualQuestion"));
 			model.addAttribute("testForm", testForm);
-//If JavaScript is disabled		
-			response.addHeader("REFRESH",
-					((long)session.getAttribute("timerBegin") - System.currentTimeMillis())/1000L + "; url=" + request.getContextPath()
-							+ "/test-no-js?nothingSelected");
+			model.addAttribute("timer", timer);
 
 			return "test";
 
@@ -81,7 +85,7 @@ public class TestNoJsController extends AbstractProjectController{
 			try {
 //Add new timer
 				HttpSession session = request.getSession();
-				session.setAttribute("timerBegin", (long)(System.currentTimeMillis() + 1000*30));
+				session.setAttribute("timerBegin", (long)(System.currentTimeMillis() + 1000*31));
 				List<Questions> allQuestions = (List<Questions>) session
 						.getAttribute("allQuestions");
 				session.setAttribute("actualQuestion",
@@ -110,7 +114,7 @@ public class TestNoJsController extends AbstractProjectController{
 		}
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@RequestMapping(method = RequestMethod.POST)
 	public String testNoJsPost(
@@ -125,7 +129,7 @@ public class TestNoJsController extends AbstractProjectController{
 			try {
 //Add new timer
 				HttpSession session = request.getSession();
-				session.setAttribute("timerBegin", (long)(System.currentTimeMillis() + 1000*30));
+				session.setAttribute("timerBegin", (long)(System.currentTimeMillis() + 1000*31));
 				List<Questions> allQuestions = (List<Questions>) session
 						.getAttribute("allQuestions");
 				session.setAttribute("actualQuestion",

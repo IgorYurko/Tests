@@ -6,7 +6,7 @@
 }
 
 html {
-	
+
 }
 
 body {
@@ -207,10 +207,10 @@ figure.effect-layla figcaption::after {
 figure.effect-layla h2 {
 	padding: 0 20px;
 	margin-top: 60px;
-	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.68), 
-				1px 1px 0px rgba(0, 0, 0, 1), 
-				-1px -1px 0px rgba(0, 0, 0, 1), 
-				1px -1px 0px rgba(0, 0, 0, 1), 
+	text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.68),
+				1px 1px 0px rgba(0, 0, 0, 1),
+				-1px -1px 0px rgba(0, 0, 0, 1),
+				1px -1px 0px rgba(0, 0, 0, 1),
 				-1px 1px 0px rgba(0, 0, 0, 1);
 	-webkit-transition: -webkit-transform 0.35s;
 	transition: transform 0.35s;
@@ -221,9 +221,9 @@ figure.effect-layla p {
 	text-transform: none;
 	opacity: 0;
 	color: orange;
-	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.68), 
-				1px 1px 0px rgba(0, 0, 0, 1), 
-				-1px -1px 0px rgba(0, 0, 0, 1), 
+	text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.68),
+				1px 1px 0px rgba(0, 0, 0, 1),
+				-1px -1px 0px rgba(0, 0, 0, 1),
 				1px -1px 0px rgba(0, 0, 0, 1),
 				 -1px 1px 0px rgba(0, 0, 0, 1);
 	-webkit-transform: translate3d(0, -10px, 0);
@@ -369,51 +369,115 @@ div.timerCss {
 	z-index: 3;
 	border: 1px solid #FFF;
 	background-color: #4FB62E;
-}
-
-div.timerCss:before, div.timerCss:after {
-	content: "9876543210";
-	display: inline-block;
-	width: .5em;
 	overflow: hidden;
-	animation: timing 10s infinite step-end;
 }
 
-div.timerCss:before {
-	content: "210";
-	animation-duration: 100s;
+div.timerCss ul li{
+	list-style-type:none;
+	display: block;
+	width: 100px;
+	height: 100px;
+}
+ul{
+	animation: timer 30s infinite step-end;
 }
 
-@keyframes timing {
-  10%{
-   text-indent: -.5em;
-   }
-  20%{
-   text-indent: -1em;
-   }
-  30%{
-   text-indent: -1.5em;
-   }
-  40%{
-   text-indent: -2em;
-   }
-  50%{
-   text-indent: -2.5em;
-   }
-  60%{
-   text-indent: -3em;
-   }
-  70%{
-   text-indent: -3.5em;
-   }
-  80%{
-   text-indent: -4em;
-   }
-  90%{
-   text-indent: -4.5em;
-   }
-}
 
+@keyframes timer {
+	0%{
+		margin-top: 0;
+	}
+	3.33% {
+		margin-top: -100px;
+	}
+	6.66% {
+		margin-top: -200px;
+	}
+	10%{
+		margin-top: -300px;
+	}
+	13.33% {
+		margin-top: -400px;
+	}
+	16.66% {
+		margin-top: -500px;
+	}
+	20%{
+		margin-top: -600px;
+	}
+	23.33% {
+		 margin-top: -700px;
+	 }
+	26.66% {
+		margin-top: -800px;
+	}
+	30%{
+		margin-top: -900px;
+	}
+	33.33% {
+		margin-top: -1000px;
+	}
+	36.66% {
+		margin-top: -1100px;
+	}
+	40%{
+		margin-top: -1200px;
+	}
+	43.33% {
+		margin-top: -1300px;
+	}
+	46.66% {
+		margin-top: -1400px;
+	}
+	50%{
+		margin-top: -1500px;
+	}
+	53.33% {
+		margin-top: -1600px;
+	}
+	56.66% {
+		margin-top: -1700px;
+	}
+	60% {
+		margin-top: -1800px;
+	}
+	63.33% {
+		margin-top: -1900px;
+	}
+	66.66%{
+		margin-top: -2000px;
+	}
+	70%{
+		margin-top: -2100px;
+	}
+	73.33% {
+		margin-top: -2200px;
+	}
+	76.66% {
+		margin-top: -2300px;
+	}
+	80%{
+		margin-top: -2400px;
+	}
+	83.33% {
+		margin-top: -2500px;
+	}
+	86.66% {
+		margin-top: -2600px;
+	}
+	90%{
+		margin-top: -2700px;
+	}
+	93.33% {
+		margin-top: -2800px;
+	}
+	96.66% {
+		margin-top: -2900px;
+	}
+	100%{
+		margin-top: -3000px;
+	}
+}
 /* jQuery Countdown styles 2.0.0. */
 .is-countdown {
 	border: 1px solid #FFF;
